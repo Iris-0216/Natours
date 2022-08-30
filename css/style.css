@@ -6,3 +6,28 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  /* without the browser adding any margins or paddings */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+boby {
+  /* 一般情况下，我们把字体的统一设置放在body中，而不是*中，因为这么做会更有效率 */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  /* 1.7的意思是行高是预设行高的1.7倍 */
+  line-height: 1.7;
+  color: #777;
+}
+
+.header {
+  height: 95vh;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  /* 当视口缩小无法展示所有背景时，top永远位置固定 */
+  background-position: top;
+}
