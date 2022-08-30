@@ -14,7 +14,7 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
-boby {
+body {
   /* 一般情况下，我们把字体的统一设置放在body中，而不是*中，因为这么做会更有效率 */
   font-family: 'Lato', sans-serif;
   font-weight: 400;
