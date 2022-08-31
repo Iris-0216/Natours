@@ -22,6 +22,7 @@ body {
   /* 1.7的意思是行高是预设行高的1.7倍 */
   line-height: 1.7;
   color: #777;
+  padding: 30px;
 }
 
 .header {
