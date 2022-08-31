@@ -36,6 +36,19 @@ body {
   background-size: cover;
   /* 当视口缩小无法展示所有背景时，top永远位置固定 */
   background-position: top;
+  position: relative;
+
   /* polygon的坐标顺序是： 上左，上右，下右，下左 & xy */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* 浏览器会自动根据比例调节宽度 */
+  height: 35px;
 }
