@@ -36,4 +36,6 @@ body {
   background-size: cover;
   /* 当视口缩小无法展示所有背景时，top永远位置固定 */
   background-position: top;
+  /* polygon的坐标顺序是： 上左，上右，下右，下左 & xy */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
