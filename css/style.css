@@ -59,11 +59,15 @@ body {
   left: 50%;
   /* 注意：translate中的-50%指的是向左or向上移动所在元素宽or高的50% */
   transform: translate(-50%, -50%);
+  /* 因为inline-box还是有inline元素的特性，
+  所以text-align: center; 可以让button居中*/
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  margin-bottom: 60px;
   /* 
    // fix shaking problem if exists
     backface-visibility: hidden;
@@ -120,4 +124,29 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  /* 注意: 这个-1px是相对初始状态而言的而不是hover状态 */
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
