@@ -1,5 +1,9 @@
 @charset "UTF-8";
-/* line 9, sass/main.scss */
+/* 
+关于文件名：
+以underline_开头的表示是partial Files--之后会被import到其他文件中进行使用
+*/
+/* line 6, sass/base/_base.scss */
 *,
 *::after,
 *::before {
@@ -8,7 +12,7 @@
   padding: 0;
   box-sizing: inherit; }
 
-/* line 18, sass/main.scss */
+/* line 15, sass/base/_base.scss */
 html {
   font-size: 62.5%;
   /* 
@@ -19,77 +23,10 @@ html {
   所以我们通过百分比来设置
   */ }
 
-/* line 29, sass/main.scss */
+/* line 26, sass/base/_base.scss */
 body {
-  /* 一般情况下，我们把字体的统一设置放在body中，而不是*中，因为这么做会更有效率 */
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  /* 1.7的意思是行高是预设行高的1.7倍 */
-  line-height: 1.7;
-  color: #777;
   padding: 3rem;
   box-sizing: border-box; }
-
-/* line 41, sass/main.scss */
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  /* 当视口缩小无法展示所有背景时，top永远位置固定 */
-  background-position: top;
-  position: relative;
-  /* polygon的坐标顺序是： 上左，上右，下右，下左 & xy */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  /* line 57, sass/main.scss */
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  /* line 63, sass/main.scss */
-  .header__logo {
-    /* 浏览器会自动根据比例调节宽度 */
-    height: 3.5rem; }
-  /* line 68, sass/main.scss */
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* 注意：translate中的-50%指的是向左or向上移动所在元素宽or高的50% */
-    transform: translate(-50%, -50%);
-    /* 因为inline-box还是有inline元素的特性，
-    所以text-align: center; 可以让button居中*/
-    text-align: center; }
-
-/* line 80, sass/main.scss */
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-  /* 
-   // fix shaking problem if exists
-    backface-visibility: hidden;
-   */ }
-  /* line 88, sass/main.scss */
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    /* 先快后慢 */
-    animation-timing-function: ease-out;
-    /* 动画发生的次数 */
-    /* animation-iteration-count: 3; */
-    /* animation-delay: 2s; */ }
-  /* line 102, sass/main.scss */
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -121,7 +58,47 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
-/* line 154, sass/main.scss */
+/* line 1, sass/base/_typography.scss */
+body {
+  /* 一般情况下，我们把字体的统一设置放在body中，而不是*中，因为这么做会更有效率 */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  /* 1.7的意思是行高是预设行高的1.7倍 */
+  line-height: 1.7;
+  color: #777; }
+
+/* line 12, sass/base/_typography.scss */
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  /* 
+     // fix shaking problem if exists
+      backface-visibility: hidden;
+     */ }
+  /* line 20, sass/base/_typography.scss */
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* 先快后慢 */
+    animation-timing-function: ease-out;
+    /* 动画发生的次数 */
+    /* animation-iteration-count: 3; */
+    /* animation-delay: 2s; */ }
+  /* line 34, sass/base/_typography.scss */
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+
+/* line 2, sass/components/_button.scss */
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -132,33 +109,33 @@ body {
   transition: all 0.4s;
   font-size: 1.6rem; }
 
-/* line 165, sass/main.scss */
+/* line 13, sass/components/_button.scss */
 .btn:hover {
   color: #fff;
   background-color: #fc8965;
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  /* line 171, sass/main.scss */
+  /* line 19, sass/components/_button.scss */
   .btn:hover::after {
     /* 仅hover时才追加的style设置*/
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-/* line 178, sass/main.scss */
+/* line 26, sass/components/_button.scss */
 .btn:active {
   /* 注意: 这个-1rem是相对初始状态而言的而不是hover状态 */
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-/* line 184, sass/main.scss */
+/* line 32, sass/components/_button.scss */
 .btn--white {
   background-color: #fff;
   color: #777; }
-  /* line 188, sass/main.scss */
+  /* line 36, sass/components/_button.scss */
   .btn--white::after {
     background-color: #fff; }
 
-/* line 193, sass/main.scss */
+/* line 41, sass/components/_button.scss */
 .btn::after {
   /* 注意：content和display都是必须的，否则这个元素不会被显示出来 */
   content: '';
@@ -172,8 +149,38 @@ body {
   z-index: -1;
   transition: all 0.4s; }
 
-/* line 207, sass/main.scss */
+/* line 55, sass/components/_button.scss */
 .btn--animated {
   animation: moveInBottom 0.6s ease-out 0.75s;
   /* animation-fill-mode: backwards;可以解决动画开始之前元素就可见的问题（不在动画起点） */
   animation-fill-mode: backwards; }
+
+/* line 1, sass/layout/_header.scss */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* 当视口缩小无法展示所有背景时，top永远位置固定 */
+  background-position: top;
+  position: relative;
+  /* polygon的坐标顺序是： 上左，上右，下右，下左 & xy */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  /* line 17, sass/layout/_header.scss */
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  /* line 23, sass/layout/_header.scss */
+  .header__logo {
+    /* 浏览器会自动根据比例调节宽度 */
+    height: 3.5rem; }
+  /* line 28, sass/layout/_header.scss */
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* 注意：translate中的-50%指的是向左or向上移动所在元素宽or高的50% */
+    transform: translate(-50%, -50%);
+    /* 因为inline-box还是有inline元素的特性，
+      所以text-align: center; 可以让button居中*/
+    text-align: center; }

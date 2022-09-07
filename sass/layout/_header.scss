@@ -1,0 +1,38 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+    background-size: cover;
+    /* 当视口缩小无法展示所有背景时，top永远位置固定 */
+    background-position: top;
+    position: relative;
+  
+    /* polygon的坐标顺序是： 上左，上右，下右，下左 & xy */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  
+    &__logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+    }
+    
+    &__logo {
+      /* 浏览器会自动根据比例调节宽度 */
+      height: 3.5rem;
+    }
+    
+    &__text-box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      /* 注意：translate中的-50%指的是向左or向上移动所在元素宽or高的50% */
+      transform: translate(-50%, -50%);
+      /* 因为inline-box还是有inline元素的特性，
+      所以text-align: center; 可以让button居中*/
+      text-align: center;
+    }
+  }

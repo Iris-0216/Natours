@@ -1,0 +1,29 @@
+/* 
+关于文件名：
+以underline_开头的表示是partial Files--之后会被import到其他文件中进行使用
+*/
+
+*,
+*::after,
+*::before {
+  /* without the browser adding any margins or paddings */
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /* 
+  我们设置font-size: 10px; 
+  这样设置之后，1rem = 10px 
+  但如果我们直接设置10px，就会覆盖掉browser默认的16px。
+  这样如果用户修改browser的default font size，我们的app都不会被改变（bad practice）
+  所以我们通过百分比来设置
+  */
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box;
+}

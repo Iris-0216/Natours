@@ -1,0 +1,42 @@
+body {
+    /* 一般情况下，我们把字体的统一设置放在body中，而不是*中，因为这么做会更有效率 */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    /* 1.7的意思是行高是预设行高的1.7倍 */
+    line-height: 1.7;
+    color: $color-grey-dark;
+  }
+
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    /* 
+     // fix shaking problem if exists
+      backface-visibility: hidden;
+     */
+     &--main {
+      display: block;
+      font-size: 6rem;
+      font-weight: 400;
+      letter-spacing: 3.5rem;
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      /* 先快后慢 */
+      animation-timing-function: ease-out;
+      /* 动画发生的次数 */
+      /* animation-iteration-count: 3; */
+      /* animation-delay: 2s; */
+    }
+    
+    &--sub {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1.75rem;
+      animation: moveInRight 1s ease-out;
+    }
+    
+  }
